@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block head %}
+    <meta id="question" data-value="{{ question }}"/>
+{% endblock %}
+
+{% block title %}
+    Play
+{% endblock %}
+
+{% block main %}
+    <div>
+        </br>
+        <ul class="list-group">
+            {% for element in definition %}
+                {% if loop.index < 3 %}
+                <li class="list-group-item">{{ element[0] }}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+        </br>
+    </div>
+
+
+    <form id='answer'>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="answer" name="answer" aria-label="" aria-describedby="basic-addon1">
+            <div class="input-group-prepend">
+            <button class="btn btn-outline-primary" type="submit" id="submit" name="submit" formmethod="post">check</button>
+          </div>
+        </div>
+    </form>
+
+    <div>
+        </br>
+        <p id="validate">Good luck!</p>
+        </br>
+    </div>
+
+    <div>
+        <button type="button" class="btn btn-outline-primary btn-sm" data-container="body" data-toggle="popover" data-placement="bottom"
+        data-content="{% for element in letters %} {{ element[0] }} , {% endfor %}">
+        hint 1
+        </button>
+
+        <button type="button" class="btn btn-outline-primary btn-sm" data-container="body" data-toggle="popover" data-placement="bottom"
+        data-content="{{ censoredS }}">
+        hint 2
+        </button>
+
+        {% if session.user_id %}
+        <button type="button" class="btn btn-outline-primary btn-sm" data-container="body" data-toggle="popover" data-placement="bottom"
+        data-content="{{ translation }}">
+        hint 3
+        </button>
+        {% endif %}
+
+
+
+        <button type="button" class="btn btn-outline-primary btn-sm" data-container="body" data-toggle="popover" data-placement="bottom"
+        data-content="{{ question }}">
+        answer
+        </button>
+    </div>
+
+    <br>
+    <br>
+
+
+{% endblock %}

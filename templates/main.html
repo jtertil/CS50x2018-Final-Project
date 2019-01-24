@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <div class='randoms'>
+        <br>
+        <div class='a'><a target="_blank" href="https://en.oxforddictionaries.com/definition/{{ randoms[0]['word'] }}">{{ randoms[0]["word"] }}</a></div>
+        <br>
+        <br>
+        <div class='b'><a target="_blank" href="https://en.oxforddictionaries.com/definition/{{ randoms[1]['word'] }}">{{ randoms[1]["word"] }}</a></div>
+        <br>
+        <br>
+        <div class='c'><a target="_blank" href="https://en.oxforddictionaries.com/definition/{{ randoms[2]['word'] }}">{{ randoms[2]["word"] }}</a></div>
+        <br>
+        <br>
+        <div class='d'><a target="_blank" href="https://en.oxforddictionaries.com/definition/{{ randoms[3]['word'] }}">{{ randoms[3]["word"] }}</a></div>
+        <br>
+        <br>
+        <div class='e'><a target="_blank" href="https://en.oxforddictionaries.com/definition/{{ randoms[4]['word'] }}">{{ randoms[4]["word"] }}</a></div>
+    </div>
+{% endblock %}

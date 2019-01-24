@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block main %}
+    <div align='justify'>
+        <h1>Hello Word!</h1>
+        <p class="text-muted">This application is created to help you learn english words!</p>
+        <br>
+        <p>It bases on <a target="_blank" href="https://www.wordfrequency.info/">5000 most common words in english</a>, try to guess all! You can just play, but if you register you will have youre own base of words and one hint more!</p>
+        <p>With every word you will have dictionary definision. That will help you learn english on the best way - with contex. You need some hints? There are 3! Letters, translation to your language (for registers) and sample of use.</p>
+        Aplication uses:<ul>
+            <li><a target="_blank" href="https://developer.oxforddictionaries.com/">Oxford Dictionaries API</a></li>
+            <li><a target="_blank" href="https://cloud.google.com/translate/">Google Cloud Translation API</a></li>
+        </ul>
+        <p>Say Hello Word :)</p>
+    </div>
+{% endblock %}
